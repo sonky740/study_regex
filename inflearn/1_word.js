@@ -46,3 +46,24 @@ console.log('test7', test7);
 
 const test8 = p2.match(/\s\s\s-\s\s\s\s-\s\s\s\s/g); // 공백
 console.log('test8', test8);
+
+// 문자 범위 지정하기
+// [a-z] : a부터 z까지의 소문자 범위를 의미한다.
+// [a-zA-Z] : a부터 Z까지의 소문자, 대문자 범위를 의미한다. (중간에 특수문자가 포함되어 따로 표시, ASCII 코드 참조)
+// [0-9] : 0부터 9까지의 문자 범위를 의미한다.
+// [가-힣] : 가부터 힣까지의 문자 범위를 의미한다.
+const p3 = `
+010-1234-5678
+010-1234-_678
+abc-defg-hijkAZ
+안녕하세요
+`;
+
+const test9 = p3.match(/[가-힣]/g); // 한글
+console.log('test9', test9);
+
+const test10 = p3.match(/[a-z]/g); // 소문자
+console.log('test10', test10);
+
+const test11 = p3.match(/[a-zA-Z]/g); // 소문자, 대문자
+console.log('test11', test11);
